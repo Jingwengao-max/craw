@@ -1,0 +1,11 @@
+{
+  "event_slug": "事件英文简称",
+  "event_name": "具体事件名称",
+  "search_queries": ["直接填写搜索关键词"],
+  "mode": "limited",
+  "keywords": [],
+  "min_post_keyword_hits": 1,
+  "max_posts": 5,
+  "max_comments_per_post": 100,
+  "max_replies_per_comment": 50
+}
