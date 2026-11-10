@@ -13,19 +13,18 @@ python -m venv .venv
 
 ## 直接运行（无需修改代码或配置文件）
 
+事件没有写死。将下面的“事件名称”和“微博搜索关键词”替换为需要采集的内容即可：
+
 ```powershell
 .\.venv\Scripts\python.exe weibo\run_pipeline.py `
-  --event "世界杯决赛西班牙胜利" `
+  --event "事件名称" `
   --mode limited `
-  --query "世界杯决赛 西班牙 胜利" `
-  --keywords 世界杯 决赛 西班牙 夺冠 冠军 胜利 `
-  --required 西班牙 阿根廷 决赛 `
+  --query "微博搜索关键词" `
   --posts 5 `
   --pages 1 `
   --comments 100 `
   --replies 20 `
-  --images 3 `
-  --min-hits 2
+  --images 3
 ```
 
 首次运行会打开 Edge，请在提示时间内登录微博。登录信息只保存在本地 `cookies.txt`；该文件已加入 `.gitignore`，不要上传或分享。
@@ -63,6 +62,25 @@ python -m venv .venv
 ```
 
 `--keywords` 可以省略，程序会从搜索词自动提取；事件存在简称或别名时建议手动填写。
+
+## 完整示例
+
+以下以“世界杯决赛西班牙胜利”为示例，仅用于展示参数填写方式，事件并未写死：
+
+```powershell
+.\.venv\Scripts\python.exe weibo\run_pipeline.py `
+  --event "世界杯决赛西班牙胜利" `
+  --mode limited `
+  --query "世界杯决赛 西班牙 胜利" `
+  --keywords 世界杯 决赛 西班牙 夺冠 冠军 胜利 `
+  --required 西班牙 阿根廷 决赛 `
+  --posts 5 `
+  --pages 1 `
+  --comments 100 `
+  --replies 20 `
+  --images 3 `
+  --min-hits 2
+```
 
 当普通关键词混入大量旁支话题时，可以增加轻量约束：
 
